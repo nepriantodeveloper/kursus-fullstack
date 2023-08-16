@@ -1,0 +1,22 @@
+1. install composer
+2. install gitscm
+3. buat repository di github
+4. buat project via laragon quick app pilih laravel
+5. git config --global user.name "nepriantodeveloper"
+6. git config --global user.email "neprianto@gmail.com"
+7. pindahkan 2 buah template ke folder laragon/www/kursus-fullstack/public_html
+
+
+untuk repository baru
+1. echo "# kursus-fullstack" >> README.md
+2. git init
+3. git add README.md
+4. git commit -m "first commit"
+5. git branch -M main
+6. git remote add origin https://github.com/nepriantodeveloper/kursus-fullstack.git
+8. git push -u origin main
+
+update repository
+1. git remote add origin https://github.com/nepriantodeveloper/kursus-fullstack.git
+2. git branch -M main
+3. git push -u origin main
