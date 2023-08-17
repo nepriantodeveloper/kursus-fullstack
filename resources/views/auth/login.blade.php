@@ -1,124 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Login &mdash; Stisla</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Log in</title>
 
-  <!-- General CSS Files -->
-  <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/fontawesome/css/all.min.css')}}">
-
-  <!-- CSS Libraries -->
-  <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/bootstrap-social/bootstrap-social.css')}}">
-
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('stisla/dist/assets/css/components.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{asset('lte/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{{asset('lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{asset('lte/dist/css/adminlte.min.css')}}">
 </head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Admin</b>LTE</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
 
-<body>
-  <div id="app">
-    <section class="section">
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-            <div class="login-brand">
-              <img src="{{asset('stisla/dist/assets/img/stisla-fill.svg')}}" alt="logo" width="100" class="shadow-light rounded-circle">
+      <form action="../../index3.html" method="post">
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
             </div>
-
-            <div class="card card-primary">
-              <div class="card-header"><h4>Login</h4></div>
-
-              <div class="card-body">
-                <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
-                     @csrf
-                  <div class="form-group">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                  </div>
-
-                  <div class="form-group">
-                    <div class="d-block">
-                        <label for="password" class="control-label">Password</label>
-                      <div class="float-right">
-                        <a href="auth-forgot-password.html" class="text-small">
-                          Forgot Password?
-                        </a>
-                      </div>
-                    </div>
-                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                  </div>
-
-                  <div class="form-group">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                      <label class="custom-control-label" for="remember-me">Remember Me</label>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                      Login
-                    </button>
-                  </div>
-                </form>
-                <!-- <div class="text-center mt-4 mb-3">
-                  <div class="text-job text-muted">Login With Social</div>
-                </div>
-                <div class="row sm-gutters">
-                  <div class="col-6">
-                    <a class="btn btn-block btn-social btn-facebook">
-                      <span class="fab fa-facebook"></span> Facebook
-                    </a>
-                  </div>
-                  <div class="col-6">
-                    <a class="btn btn-block btn-social btn-twitter">
-                      <span class="fab fa-twitter"></span> Twitter
-                    </a>                                
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="mt-5 text-muted text-center">
-              Don't have an account? <a href="auth-register.html">Create One</a>
-            </div>
-            <div class="simple-footer">
-              Copyright &copy; Stisla 2018
-            </div> -->
           </div>
         </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <div class="social-auth-links text-center mb-3">
+        <p>- OR -</p>
+        <a href="#" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+        </a>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+        </a>
       </div>
-    </section>
+      <!-- /.social-auth-links -->
+
+      <p class="mb-1">
+        <a href="forgot-password.html">I forgot my password</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.html" class="text-center">Register a new membership</a>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
   </div>
+</div>
+<!-- /.login-box -->
 
-  <!-- General JS Scripts -->
-  <script src="{{asset('stisla/dist/assets/modules/jquery.min.js')}}"></script>
-  <script src="{{asset('stisla/dist/assets/modules/popper.js')}}"></script>
-  <script src="{{asset('stisla/dist/assets/modules/tooltip.js')}}"></script>
-  <script src="{{asset('stisla/dist/assets/modules/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('stisla/dist/assets/modules/nicescroll/jquery.nicescroll.min.js')}}"></script>
-  <script src="{{asset('stisla/dist/assets/modules/moment.min.js')}}"></script>
-  <script src="{{asset('stisla/dist/assets/js/stisla.js')}}"></script>
-  
-  <!-- JS Libraies -->
-
-  <!-- Page Specific JS File -->
-  
-  <!-- Template JS File -->
-  <script src="{{asset('stisla/dist/assets/js/scripts.js')}}"></script>
-  <script src="{{asset('stisla/dist/assets/js/custom.js')}}"></script>
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
 </body>
 </html>

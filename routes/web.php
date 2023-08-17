@@ -1,6 +1,10 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +24,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('produk',ProdukController::class);
+Route::resource('kategori',KategoriController::class);
