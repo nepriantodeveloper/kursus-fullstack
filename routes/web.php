@@ -26,3 +26,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('produk',ProdukController::class);
 Route::resource('kategori',KategoriController::class);
+Route::post('kategori/hapus', [KategoriController::class, 'deleteSelected'])->name('deleteSelected');
+Route::post('kategori/cetak', [KategoriController::class, 'print'])->name('print');
+Route::post('kategori/export', [KategoriController::class, 'exportexcel'])->name('export');
+Route::post('kategori/import', [KategoriController::class, 'importexcel'])->name('import');
