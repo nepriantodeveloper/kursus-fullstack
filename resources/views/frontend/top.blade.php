@@ -8,8 +8,8 @@
                         <!-- Top Left -->
                         <div class="top-left">
                             <ul class="list-main">
-                                <li><i class="ti-headphone-alt"></i> +060 (800) 801-582</li>
-                                <li><i class="ti-email"></i> support@shophub.com</li>
+                                <li><i class="ti-headphone-alt"></i> 0813 8183 0651</li>
+                                <li><i class="ti-email"></i> cs@lkpnaura.com</li>
                             </ul>
                         </div>
                         <!--/ End Top Left -->
@@ -21,7 +21,7 @@
                                 <li><i class="ti-location-pin"></i> Store location</li>
                                 <li><i class="ti-alarm-clock"></i> <a href="#">Daily deal</a></li>
                                 <li><i class="ti-user"></i> <a href="#">My account</a></li>
-                                <li><i class="ti-power-off"></i><a href="login.html#">Login</a></li>
+                                <li><i class="ti-power-off"></i><a href="{{route('login')}}">Login</a></li>
                             </ul>
                         </div>
                         <!-- End Top Right -->
@@ -36,7 +36,7 @@
                     <div class="col-lg-2 col-md-2 col-12">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                            <a href="index.html"><img src="{{asset('eshop/images/logo.png')}}" alt="logo"></a>
                         </div>
                         <!--/ End Logo -->
                         <!-- Search Form -->

@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
 
-            <form class="form-horizontal" data-toggle="validator" method="post">
+            <form id="modal-form" class="form-horizontal" data-toggle="validator" method="post">
                 {{ csrf_field() }} {{ method_field('POST') }}
 
                 <div class="modal-header">

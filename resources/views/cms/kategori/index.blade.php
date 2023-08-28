@@ -153,6 +153,7 @@
                 type: "GET",
                 dataType: "JSON",
                 success: function(data) {
+                    //jika datanya dapat maka panggil formnya
                     $('#modal-form').modal('show');
                     $('.modal-title').text('Edit Kategori');
 
