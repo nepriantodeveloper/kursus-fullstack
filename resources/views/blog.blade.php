@@ -51,11 +51,10 @@
                     <!-- Right elements -->
                     <div class="col-lg-5 col-md-12 col-12">
                         <div class="input-group float-center">
-
+                                                        
                             <div class="input-group">
-                                <input type="text" class="form-control" name="cari"
-                                    placeholder="Cari Yang Kamu Inginkan">
-                                <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i></button>
+                              <input type="text" class="form-control" name="cari" placeholder="Cari Yang Kamu Inginkan">
+                              <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i></button>
                             </div>
                         </div>
                     </div>
@@ -150,165 +149,41 @@
         </div>
         <!-- Jumbotron -->
     </header>
-    <section>
-        <div class="container my-5">
-            <header class="mb-4">
-                <h3>New products</h3>
-            </header>
-
-            <div class="row">
-                @foreach ($produk as $p)
-                    <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
-                        <div class="card w-100 my-2 shadow-2-strong">
-                            <img src="https://bootstrap-ecommerce.com/bootstrap5-ecommerce/images/items/1.webp"
-                                class="card-img-top" style="aspect-ratio: 1 / 1" />
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">{{ $p->nama_produk }}</h5>
-                                <p class="card-text">Rp. {{ $p->harga_jual }}</p>
-                                <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto">
-                                    <a href="{{ route('produk.tocart', $p->id) }}"
-                                        class="btn btn-primary shadow-0 me-1">Add to
-                                        cart</a>
-                                    <a href="#!" class="btn btn-light border px-2 pt-2 icon-hover"><i
-                                            class="fas fa-heart fa-lg text-secondary px-1"></i></a>
-                                    <a href="{{ route('produk.detail', $p->id) }}"
-                                        class="btn btn-light border px-2 pt-2 icon-hover"><i
-                                            class="fas fa-eye fa-lg text-secondary px-1"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    <!-- Products -->
-
-    <!-- Feature -->
-    <section class="mt-5" style="background-color: #f5f5f5;">
-        <div class="container text-dark pt-3">
-            <header class="pt-4 pb-3">
-                <h3>Why choose us</h3>
-            </header>
-
-            <div class="row mb-4">
-                <div class="col-lg-4 col-md-6">
-                    <figure class="d-flex align-items-center mb-4">
-                        <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-                            <i class="fas fa-camera-retro fa-2x fa-fw text-primary floating"></i>
-                        </span>
-                        <figcaption class="info">
-                            <h6 class="title">Reasonable prices</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-                        </figcaption>
-                    </figure>
-                    <!-- itemside // -->
-                </div>
-                <!-- col // -->
-                <div class="col-lg-4 col-md-6">
-                    <figure class="d-flex align-items-center mb-4">
-                        <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-                            <i class="fas fa-star fa-2x fa-fw text-primary floating"></i>
-                        </span>
-                        <figcaption class="info">
-                            <h6 class="title">Best quality</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-                        </figcaption>
-                    </figure>
-                    <!-- itemside // -->
-                </div>
-                <!-- col // -->
-                <div class="col-lg-4 col-md-6">
-                    <figure class="d-flex align-items-center mb-4">
-                        <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-                            <i class="fas fa-plane fa-2x fa-fw text-primary floating"></i>
-                        </span>
-                        <figcaption class="info">
-                            <h6 class="title">Worldwide shipping</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-                        </figcaption>
-                    </figure>
-                    <!-- itemside // -->
-                </div>
-                <!-- col // -->
-                <div class="col-lg-4 col-md-6">
-                    <figure class="d-flex align-items-center mb-4">
-                        <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-                            <i class="fas fa-users fa-2x fa-fw text-primary floating"></i>
-                        </span>
-                        <figcaption class="info">
-                            <h6 class="title">Customer satisfaction</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-                        </figcaption>
-                    </figure>
-                    <!-- itemside // -->
-                </div>
-                <!-- col // -->
-                <div class="col-lg-4 col-md-6">
-                    <figure class="d-flex align-items-center mb-4">
-                        <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-                            <i class="fas fa-thumbs-up fa-2x fa-fw text-primary floating"></i>
-                        </span>
-                        <figcaption class="info">
-                            <h6 class="title">Happy customers</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-                        </figcaption>
-                    </figure>
-                    <!-- itemside // -->
-                </div>
-                <!-- col // -->
-                <div class="col-lg-4 col-md-6">
-                    <figure class="d-flex align-items-center mb-4">
-                        <span class="rounded-circle bg-white p-3 d-flex me-2 mb-2">
-                            <i class="fas fa-box fa-2x fa-fw text-primary floating"></i>
-                        </span>
-                        <figcaption class="info">
-                            <h6 class="title">Thousand items</h6>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmor</p>
-                        </figcaption>
-                    </figure>
-                    <!-- itemside // -->
-                </div>
-                <!-- col // -->
-            </div>
-        </div>
-        <!-- container end.// -->
-    </section>
-    <!-- Feature -->
-
-    <!-- Blog -->
-    <section class="mt-5 mb-4">
+     <!-- Blog -->
+     <section class="mt-5 mb-4">
         <div class="container text-dark">
             <header class="mb-4">
                 <h3>Blog posts</h3>
             </header>
 
             <div class="row">
-                @foreach ($artikel as $a)
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <article>
-                            <a href="{{ route('blog.detail') }}" class="img-fluid">
-                                <img class="rounded w-100" src="{{ $a->gambar }}" style="object-fit: cover;"
-                                    height="160" />
+              @foreach ($artikel as $a)
+                
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <article>
+                        <a href="{{route('blog.detail',$a->id)}}" class="img-fluid">
+                            <img class="rounded w-100"
+                                src="{{$a->gambar}}"
+                                style="object-fit: cover;" height="160" />
+                        </a>
+                        <div class="mt-2 text-muted small d-block mb-1">
+                            <span>
+                                <i class="fa fa-calendar-alt fa-sm"></i>
+                                {{$a->created_at}}
+                            </span>
+                            <a href="{{route('blog.detail',$a->id)}}">
+                                <h6 class="text-dark">{{$a->judul}}</h6>
                             </a>
-                            <div class="mt-2 text-muted small d-block mb-1">
-                                <span>
-                                    <i class="fa fa-calendar-alt fa-sm"></i>
-                                    {{ $a->created_at }}
-                                </span>
-                                <a href="{{ route('blog.detail') }}">
-                                    <h6 class="text-dark">{{ $a->judul }}</h6>
-                                </a>
-                                <p>{{ substr($a->isi, 0, 100) }}</p>
-                            </div>
-                        </article>
-                    </div>
-                @endforeach
+                            <p>{{substr($a->isi,0,100)}}</p>
+                        </div>
+                    </article>
+                </div>
+
+              @endforeach 
             </div>
         </div>
     </section>
     <!-- Blog -->
-
     <!-- Footer -->
     <footer class="text-center text-lg-start text-muted mt-3" style="background-color: #f5f5f5;">
         <!-- Section: Links  -->

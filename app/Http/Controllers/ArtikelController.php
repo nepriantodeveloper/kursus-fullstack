@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Artikel;
+use Svg\Tag\Path;
 use Yajra\DataTables\DataTables;
 
 class ArtikelController extends Controller
@@ -14,7 +15,7 @@ class ArtikelController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            
+
             $data = Artikel::all();
             return DataTables::of($data)
                 ->addIndexColumn()
@@ -50,7 +51,17 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $artikel = new Artikel;
+        $artikel->judul    = $request['judul'];
+        $artikel->isi    = $request['isi'];
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $nama_gambar = "artikel." . $file->getClientOriginalExtension();
+            $lokasi = public_path('upload/artikel');
+            $file->move($lokasi, $nama_gambar);
+            $artikel->gambar         = $nama_gambar;
+        }
+        $artikel->save();
     }
 
     /**
@@ -74,7 +85,17 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $artikel =  Artikel::find($id);
+        $artikel->judul    = $request['judul'];
+        $artikel->isi    = $request['isi'];
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $nama_gambar = "artikel." . $file->getClientOriginalExtension();
+            $lokasi = public_path('upload/artikel');
+            $file->move($lokasi, $nama_gambar);
+            $artikel->gambar         = $nama_gambar;
+        }
+        $artikel->update();
     }
 
     /**

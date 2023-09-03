@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Helper\ImageManager;
 use App\Models\Kategori;
 use App\Models\Produk;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\DataTables;
 
 class ProdukController extends Controller
 {
+    use ImageManager;
+    //cara menggunakan helper, tinggal panggil functionnya
+    //$fileData = $this->uploads($file,$path);
     /**
      * Display a listing of the resource.
      */
@@ -56,6 +59,7 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
 
+
         $jml = Produk::where('kode_produk', '=', $request['kode'])->count();
         if ($jml < 1) {
             $produk = new Produk;
@@ -68,17 +72,14 @@ class ProdukController extends Controller
             $produk->harga_jual    = $request['harga_jual'];
             $produk->stok          = $request['stok'];
             $produk->satuan          = $request['satuan'];
-            $foto = time() . '.jpg';
-            Storage::put('images/produk/', $foto);
-            $produk->gambar = $foto;
+            if ($request->hasFile('gambar')) {
+                $file = $request->file('gambar');
+                $nama_gambar = "produk." . $file->getClientOriginalExtension();
+                $lokasi = public_path('upload/produk');
+                $file->move($lokasi, $nama_gambar);
+                $produk->gambar         = $nama_gambar;
+            }
             $produk->save();
-            echo json_encode(array('msg' => 'success'));
-            // $request->foto->storeAs('images/produk', $foto);
-            // $request->move(public_path('images/produk'), $foto);
-            // $request->foto->storeAs('public/images/produk', $foto);
-
-            // $foto = $request->file('foto')->store('public/images/produk');
-
         } else {
             echo json_encode(array('msg' => 'error'));
         }
@@ -115,8 +116,13 @@ class ProdukController extends Controller
         $produk->harga_jual    = $request['harga_jual'];
         $produk->stok          = $request['stok'];
         $produk->satuan          = $request['satuan'];
-       // $foto = $request->file('foto')->store('public/images/produk');
-        //$produk->gambar = $foto;
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $nama_gambar = "produk." . $file->getClientOriginalExtension();
+            $lokasi = public_path('upload/produk');
+            $file->move($lokasi, $nama_gambar);
+            $produk->gambar         = $nama_gambar;
+        }
         $produk->update();
         echo json_encode(array('msg' => 'success'));
     }
